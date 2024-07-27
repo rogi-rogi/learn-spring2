@@ -34,4 +34,8 @@ public class HealthController {
     public ResponseEntity<?> getEnv() {
         return ResponseEntity.ok().body(env);
     }
+    @GetMapping("/hello")
+    public String hello() {
+        return "Hello!";
+    }
 }
