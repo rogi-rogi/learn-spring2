@@ -24,7 +24,9 @@ public class UserController {
     }
 
     @PostMapping
-    public User postUser(@RequestBody User user) {
+    public User postUser() {
+        User user = new User();
+        user.setName("TEST_USER!");
         userRepository.save(user);
         return user;
     }
