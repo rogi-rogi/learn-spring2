@@ -97,7 +97,6 @@ jobs:
           username: ubuntu
           host: ${{ secrets.LIVE_SERVER_IP }}
           key: ${{ secrets.EC2_SSH_KEY }}
-          script_stop: true
           script: |
             if sudo docker ps -a --format '{{.Names}}' | grep -q "^${{env.CURRENT_UPSTREAM}}$"; then
               sudo docker stop ${{env.CURRENT_UPSTREAM}}
